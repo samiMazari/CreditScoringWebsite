@@ -56,7 +56,7 @@ function AnalysesPage() {
                 <Pie data={TARGET_DATA} dataKey="value" innerRadius={60} outerRadius={100} paddingAngle={2}>
                   {TARGET_DATA.map((d, i) => <Cell key={i} fill={d.color} />)}
                 </Pie>
-                <Tooltip formatter={(v: number) => v.toLocaleString("fr-FR")} contentStyle={{ background: "var(--color-card)", border: "1px solid var(--color-border)", borderRadius: 4, fontSize: 12 }} />
+                <Tooltip formatter={(v) => Number(v).toLocaleString("fr-FR")} contentStyle={{ background: "var(--color-card)", border: "1px solid var(--color-border)", borderRadius: 4, fontSize: 12 }} />
               </PieChart>
             </ResponsiveContainer>
           </div>
