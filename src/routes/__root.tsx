@@ -9,6 +9,9 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { Header } from "@/components/layout/Header";
+import { Sidebar } from "@/components/layout/Sidebar";
+import { Footer } from "@/components/layout/Footer";
 
 function NotFoundComponent() {
   return (
@@ -72,19 +75,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "CrediScore AI — Plateforme d'évaluation du risque de crédit" },
+      {
+        name: "description",
+        content:
+          "Plateforme académique d'analyse du risque de crédit : régression logistique, Random Forest, XGBoost et SHAP. Mémoire UPEC 2025-2026.",
+      },
+      { name: "author", content: "Mohamed Sami Mazari" },
+      { property: "og:title", content: "CrediScore AI — Évaluation du risque de crédit" },
+      { property: "og:description", content: "Simulateur de scoring crédit avec explicabilité SHAP." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
       },
     ],
   }),
@@ -113,7 +122,16 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <div className="flex min-h-screen flex-col bg-background">
+        <Header />
+        <div className="mx-auto flex w-full max-w-[1400px] flex-1">
+          <Sidebar />
+          <main className="min-w-0 flex-1 px-6 py-8 md:px-10">
+            <Outlet />
+          </main>
+        </div>
+        <Footer />
+      </div>
     </QueryClientProvider>
   );
 }
