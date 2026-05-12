@@ -9,8 +9,38 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SimulateurRouteImport } from './routes/simulateur'
+import { Route as ModelesRouteImport } from './routes/modeles'
+import { Route as MethodologieRouteImport } from './routes/methodologie'
+import { Route as AnalysesRouteImport } from './routes/analyses'
+import { Route as AProposRouteImport } from './routes/a-propos'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SimulateurRoute = SimulateurRouteImport.update({
+  id: '/simulateur',
+  path: '/simulateur',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ModelesRoute = ModelesRouteImport.update({
+  id: '/modeles',
+  path: '/modeles',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MethodologieRoute = MethodologieRouteImport.update({
+  id: '/methodologie',
+  path: '/methodologie',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnalysesRoute = AnalysesRouteImport.update({
+  id: '/analyses',
+  path: '/analyses',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AProposRoute = AProposRouteImport.update({
+  id: '/a-propos',
+  path: '/a-propos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +49,102 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
+  '/analyses': typeof AnalysesRoute
+  '/methodologie': typeof MethodologieRoute
+  '/modeles': typeof ModelesRoute
+  '/simulateur': typeof SimulateurRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
+  '/analyses': typeof AnalysesRoute
+  '/methodologie': typeof MethodologieRoute
+  '/modeles': typeof ModelesRoute
+  '/simulateur': typeof SimulateurRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
+  '/analyses': typeof AnalysesRoute
+  '/methodologie': typeof MethodologieRoute
+  '/modeles': typeof ModelesRoute
+  '/simulateur': typeof SimulateurRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/a-propos'
+    | '/analyses'
+    | '/methodologie'
+    | '/modeles'
+    | '/simulateur'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/a-propos'
+    | '/analyses'
+    | '/methodologie'
+    | '/modeles'
+    | '/simulateur'
+  id:
+    | '__root__'
+    | '/'
+    | '/a-propos'
+    | '/analyses'
+    | '/methodologie'
+    | '/modeles'
+    | '/simulateur'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AProposRoute: typeof AProposRoute
+  AnalysesRoute: typeof AnalysesRoute
+  MethodologieRoute: typeof MethodologieRoute
+  ModelesRoute: typeof ModelesRoute
+  SimulateurRoute: typeof SimulateurRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/simulateur': {
+      id: '/simulateur'
+      path: '/simulateur'
+      fullPath: '/simulateur'
+      preLoaderRoute: typeof SimulateurRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/modeles': {
+      id: '/modeles'
+      path: '/modeles'
+      fullPath: '/modeles'
+      preLoaderRoute: typeof ModelesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/methodologie': {
+      id: '/methodologie'
+      path: '/methodologie'
+      fullPath: '/methodologie'
+      preLoaderRoute: typeof MethodologieRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/analyses': {
+      id: '/analyses'
+      path: '/analyses'
+      fullPath: '/analyses'
+      preLoaderRoute: typeof AnalysesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/a-propos': {
+      id: '/a-propos'
+      path: '/a-propos'
+      fullPath: '/a-propos'
+      preLoaderRoute: typeof AProposRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +157,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AProposRoute: AProposRoute,
+  AnalysesRoute: AnalysesRoute,
+  MethodologieRoute: MethodologieRoute,
+  ModelesRoute: ModelesRoute,
+  SimulateurRoute: SimulateurRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
