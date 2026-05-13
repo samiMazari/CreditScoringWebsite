@@ -75,17 +75,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "CrediScore AI — Plateforme d'évaluation du risque de crédit" },
+      { title: "Credit-Scoring-MM" },
       {
         name: "description",
         content:
           "Plateforme académique d'analyse du risque de crédit : régression logistique, Random Forest, XGBoost et SHAP. Mémoire UPEC 2025-2026.",
       },
       { name: "author", content: "Mohamed Sami Mazari" },
-      { property: "og:title", content: "CrediScore AI — Évaluation du risque de crédit" },
-      { property: "og:description", content: "Simulateur de scoring crédit avec explicabilité SHAP." },
+      { property: "og:title", content: "Credit-Scoring-MM" },
+      { property: "og:description", content: "CreditScore AI is an interactive web application for credit risk assessment using machine learning." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Credit-Scoring-MM" },
+      { name: "description", content: "CreditScore AI is an interactive web application for credit risk assessment using machine learning." },
+      { name: "twitter:description", content: "CreditScore AI is an interactive web application for credit risk assessment using machine learning." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2d0cee38-4bff-4668-b524-d2417225c741/id-preview-0f64bf4c--96b10fb8-5326-49d4-b68e-460710798314.lovable.app-1778600926017.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2d0cee38-4bff-4668-b524-d2417225c741/id-preview-0f64bf4c--96b10fb8-5326-49d4-b68e-460710798314.lovable.app-1778600926017.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
