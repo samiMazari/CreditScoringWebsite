@@ -10,7 +10,7 @@ export function Header() {
             <ShieldCheck className="h-5 w-5" />
           </div>
           <div className="leading-tight">
-            <div className="font-serif text-lg font-semibold text-primary">CrediScore AI</div>
+            <div className="font-serif text-lg font-semibold text-primary">Sami-CrediScore</div>
             <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
               Risk Analytics Platform
             </div>
