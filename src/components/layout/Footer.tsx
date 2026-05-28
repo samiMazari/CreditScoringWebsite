@@ -3,7 +3,7 @@ export function Footer() {
     <footer className="mt-20 border-t border-border bg-card">
       <div className="mx-auto grid max-w-[1400px] gap-8 px-6 py-10 md:grid-cols-4">
         <div>
-          <div className="font-serif text-base font-semibold text-primary">CrediScore AI</div>
+          <div className="font-serif text-base font-semibold text-primary">Sami-CrediScore</div>
           <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
             Plateforme académique d'évaluation du risque de crédit fondée sur les
             travaux empiriques du mémoire de recherche UPEC 2025-2026.
