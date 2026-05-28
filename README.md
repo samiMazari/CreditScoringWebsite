@@ -1,4 +1,4 @@
-# 🚀 CrediScore AI
+#  CrediScore AI
 
 **Plateforme Web de Scoring de Crédit Bancaire**
 
@@ -6,11 +6,11 @@ Application de modélisation du risque de crédit combinant approches économét
 
 ---
 
-## 📋 Vue d'ensemble
+##  Vue d'ensemble
 
 **CrediScore AI** est une application web interactive permettant d'évaluer le risque de défaut de crédit d'un demandeur d'emprunt. Elle implémente un modèle XGBoost entraîné sur 307 511 observations réelles.
 
-### ✨ Caractéristiques
+###  Caractéristiques
 
 - ✅ Interface web intuitive et responsive
 - ✅ Prédictions en < 1 seconde
@@ -21,7 +21,7 @@ Application de modélisation du risque de crédit combinant approches économét
 
 ---
 
-## 🏗️ Architecture Technique
+##  Architecture Technique
 
 ### Stack
 
@@ -47,7 +47,7 @@ Résultats (Score + Probabilité + Explications)
 
 ---
 
-## 📊 Performance du Modèle
+##  Performance du Modèle
 
 ### Résultats XGBoost
 
@@ -63,15 +63,15 @@ Résultats (Score + Probabilité + Explications)
 
 | Hypothèse | Énoncé | Résultat |
 |-----------|--------|----------|
-| H1 | Revenu réduit défaut | ❌ Rejetée (p=0.367) |
-| H2 | Emploi réduit défaut | ✅ Validée (β=-0.190) |
-| H3 | Endettement ↑ défaut | ✅ Validée (β=+0.150) |
-| H4 | Historique prédit | ✅✅ Fortement validée |
-| H5 | ML > Logit | ◐ Partiellement (+1.69 AUC) |
+| H1 | Revenu réduit défaut | 
+| H2 | Emploi réduit défaut | 
+| H3 | Endettement ↑ défaut | 
+| H4 | Historique prédit | 
+| H5 | ML > Logit | 
 
 ---
 
-## 🚀 Installation & Utilisation
+## Installation & Utilisation
 
 ### Accès en ligne (recommandé)
 
@@ -108,8 +108,8 @@ npm start      # Port 3000
 
 ## 📈 Top 8 Variables Prédictives (SHAP)
 
-1. **EXT_SOURCE_3** - Score bureau crédit #3 ⭐⭐⭐
-2. **EXT_SOURCE_2** - Score bureau crédit #2 ⭐⭐⭐
+1. **EXT_SOURCE_3** - Score bureau crédit #3 
+2. **EXT_SOURCE_2** - Score bureau crédit #2 
 3. **CREDIT_ANNUITY_RATIO** - Durée approx. prêt
 4. **EXT_SOURCE_1** - Score bureau crédit #1
 5. **AMT_ANNUITY** - Mensualité
@@ -117,11 +117,11 @@ npm start      # Port 3000
 7. **ANNUITY_INCOME_RATIO** - DTI (ratio endettement)
 8. **AGE_ANS** - Âge
 
-⚠️ **Interprétation** : L'historique crédit (EXT_SOURCE) est le déterminant dominant.
+ **Interprétation** : L'historique crédit (EXT_SOURCE) est le déterminant dominant.
 
 ---
 
-## 🔐 Conformité Réglementaire
+##  Conformité Réglementaire
 
 ### Bâle III
 Modèle PD robuste et validé pour exigences capital.
@@ -142,7 +142,7 @@ Estimation fiable de probabilité défaut pour provisionnement.
 
 ---
 
-## 📂 Structure du Projet
+##  Structure du Projet
 
 ```
 crediscore-ai/
@@ -173,7 +173,7 @@ crediscore-ai/
 
 ---
 
-## 📊 Données d'Entraînement
+##  Données d'Entraînement
 
 **Home Credit Default Risk** (Kaggle 2018)
 
@@ -192,7 +192,7 @@ crediscore-ai/
 
 ---
 
-## 🎯 Cas d'Usage
+##  Cas d'Usage
 
 ### Pour analyste crédit
 Scorer rapidement les demandes de crédit avec explications.
@@ -208,7 +208,7 @@ Comprendre pourquoi sa demande est approuvée/refusée.
 
 ---
 
-## ⚠️ Limitations
+## Limitations
 
 ### Modèle
 - Défaut est partiellement aléatoire (~50% imprévisible)
@@ -222,7 +222,7 @@ Comprendre pourquoi sa demande est approuvée/refusée.
 
 ---
 
-## 🔬 Validation
+##  Validation
 
 ### Tests unitaires
 ```python
@@ -239,7 +239,7 @@ def test_xgboost_prediction():
 
 ---
 
-## 🚀 Déploiement
+## Déploiement
 
 ### Vercel (Frontend)
 ```bash
@@ -260,7 +260,7 @@ docker run -p 5000:5000 crediscore-ai
 
 ---
 
-## 🤝 Contribution
+## Contribution
 
 Les pull requests sont bienvenues !
 
@@ -272,13 +272,13 @@ git push origin feature/ma-feature
 
 ---
 
-## 📜 Licence
+## Licence
 
 MIT License - Libre d'utiliser, modifier et distribuer.
 
 ---
 
-## ✍️ Citation
+## Citation
 
 ```
 @thesis{mazari2025,
@@ -292,7 +292,7 @@ MIT License - Libre d'utiliser, modifier et distribuer.
 
 ---
 
-## 👤 Auteur
+## Auteur
 
 **Mohamed Sami Mazari**
 - Master 1 Économie Appliquée IA, UPEC
@@ -303,7 +303,7 @@ MIT License - Libre d'utiliser, modifier et distribuer.
 
 ---
 
-## 📞 Support
+## Support
 
 - 📧 **Email**: mazari.mohamedsami@edu.univ-pec.fr
 - 🐛 **Issues**: [GitHub Issues](https://github.com/MazariSami/crediscore-ai/issues)
@@ -311,16 +311,8 @@ MIT License - Libre d'utiliser, modifier et distribuer.
 
 ---
 
-## 🎯 Conclusion
+## Conclusion
 
 **CrediScore AI** est une solution **production-ready** de credit scoring combinant rigueur académique et applicabilité bancaire réelle.
 
 Elle démontre que théorie économique et machine learning moderne peuvent être intégrés pour créer une solution **performante, explicable et conforme à la régulation**.
-
----
-
-<p align="center">
-  <strong>Merci d'avoir utilisé CrediScore AI ! ❤️</strong>
-  <br/>
-  <a href="https://creditscoring.lovable.app/">Accéder à l'application</a>
-</p>
